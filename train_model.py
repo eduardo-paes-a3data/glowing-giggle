@@ -1,29 +1,24 @@
 import numpy as np
 import pandas as pd
-from sklearn.datasets import make_classification
+from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 import pickle
 
-# Generate synthetic data
-X, y = make_classification(
-    n_samples=1000,
-    n_features=30,
-    n_informative=15,
-    n_redundant=5,
-    random_state=42
-)
+# Load Iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
 
 # Create a DataFrame with the features and target
-df = pd.DataFrame(X, columns=[f'feature_{i+1}' for i in range(X.shape[1])])
+df = pd.DataFrame(X, columns=iris.feature_names)
 df['class'] = y
 
 # Save the dataset to a CSV file
 df.to_csv('dataset.csv', index=False)
 print("Dataset saved as 'dataset.csv'")
-
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(
