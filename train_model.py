@@ -16,6 +16,15 @@ X, y = make_classification(
     random_state=42
 )
 
+# Create a DataFrame with the features and target
+df = pd.DataFrame(X, columns=[f'feature_{i+1}' for i in range(X.shape[1])])
+df['class'] = y
+
+# Save the dataset to a CSV file
+df.to_csv('dataset.csv', index=False)
+print("Dataset saved as 'dataset.csv'")
+
+
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
