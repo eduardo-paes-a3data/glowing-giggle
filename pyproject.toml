@@ -32,7 +32,17 @@ model_features = [
     "feature_17",
     "feature_18",
     "feature_19",
-    "feature_20"
+    "feature_20",
+    "feature_21",
+    "feature_22",
+    "feature_23",
+    "feature_24",
+    "feature_25",
+    "feature_26",
+    "feature_27",
+    "feature_28",
+    "feature_29",
+    "feature_30"
 ]
 model_target = "class"
 model_path = "model.pkl"
