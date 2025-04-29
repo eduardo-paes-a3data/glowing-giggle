@@ -10,7 +10,7 @@ import pickle
 # Generate synthetic data
 X, y = make_classification(
     n_samples=1000,
-    n_features=20,
+    n_features=30,
     n_informative=15,
     n_redundant=5,
     random_state=42
